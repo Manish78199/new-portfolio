@@ -1,11 +1,27 @@
+
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Raleway, Marcellus } from "next/font/google";
 import "./globals.css";
+
+import Header from "./Components/header"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+const ralewayFont = Raleway({
+  variable: "--font-raleway",
+  subsets: ["latin"],
+
+})
+const marcellusFont = Marcellus({
+  variable: "--font-marcellus",
+  subsets: ["latin"],
+  weight:"400"
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -25,8 +41,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+
+        className={`${ralewayFont.variable} ${marcellusFont.variable} san-serif`}
       >
+
+
+        <Header />
         {children}
       </body>
     </html>
